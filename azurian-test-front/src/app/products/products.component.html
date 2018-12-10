@@ -1,0 +1,54 @@
+<div class="row mt-4" style="height: 500px">
+  <div class="col" style="height: 485px" >
+      <nav class="nav text-black bg-light">
+        <a class="nav-link display-4" style="font-size: 2.5rem;">Lista de productos</a>
+        <a class="ml-auto"><button class="btn btn-outline-dark mt-1"  href="javascript:void(0);" (click)="triggerAddModal()" >Agregar nuevo <i class="fa fa-plus-circle fa-lg text-dark"></i></button></a>
+        
+
+      </nav>
+      <div class=" list-group pr-0" style="height: 100%; overflow-y:scroll;" >
+          <a *ngFor="let product of products" (click)="viewProduct(product)" href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{product.name}}</h5>
+                <a *ngIf="selected?.id === product?.id" class="h6" href="javascript:void(0)"> <button  class="btn btn-outline-dark mt-1"  href="javascript:void(0);" (click)="allowEditing() " >Editar <i class="fa fa-edit fa-lg text-dark"></i></button> </a>
+              </div>
+              <p class="mb-1">{{product.price}}</p>
+              <small>{{product.description}}</small>
+          </a>     
+      </div>
+      <div class="row" >
+          <div class="col-xs-6" >
+              <div class="btn-group" dropdown [dropup]="false">
+                  <button id="button-autoclose1" dropdownToggle type="button" class="btn btn-default dropdown-toggle" aria-controls="dropdown-autoclose1">
+                      {{paginationPageLimit}}
+                      <span class="caret"></span>
+                  </button>
+                  <ul id="dropdown-autoclose1" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-autoclose1">
+                      <li role="menuitem" [ngClass]="{'active': (paginationLimit == 10)}">
+                          <a class="dropdown-item" (click)="paginationLimit=10; getProducts(paginationPage, paginationLimit);">10</a>
+                      </li>
+                      <li role="menuitem" [ngClass]="{'active': (paginationLimit == 15)}">
+                          <a class="dropdown-item" (click)="paginationLimit=15; getProducts(paginationPage, paginationLimit);">15</a>
+                      </li>
+                      <li role="menuitem" [ngClass]="{'active': (paginationLimit == 20)}">
+                          <a class="dropdown-item" (click)="paginationLimit=20; getProducts(paginationPage, paginationLimit);">20</a>
+                      </li>
+                      <li role="menuitem" [ngClass]="{'active': (paginationLimit == 30)}">
+                          <a class="dropdown-item" (click)="paginationLimit=30; getProducts(paginationPage, paginationLimit);">30</a>
+                      </li>
+                      <li role="menuitem" [ngClass]="{'active': (paginationLimit == 50)}">
+                          <a class="dropdown-item" (click)="paginationLimit=50; getProducts(paginationPage, paginationLimit);">50</a>
+                      </li>
+                  </ul>
+              </div>
+              <span style="font-weight: 600; padding-top: 15px; padding-right: 5px;"> per page</span>
+          </div>
+          <div class="col-xs-6" style="text-align: right; max-height: 10px">
+              <pagination [rotate]="true" [itemsPerPage]="paginationLimit" [totalItems]="paginationTotalItems" [maxSize]="paginationMaxSize" [(ngModel)]="paginationPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"></pagination>
+          </div>
+      </div>
+  </div>
+  <div class="col" style="height: 500px" >
+    <app-product-view [product]="shownProduct" ></app-product-view>
+  </div>
+</div>

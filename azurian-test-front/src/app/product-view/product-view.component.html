@@ -1,0 +1,24 @@
+<div>
+        <h1 class="display-4">Detalles de producto</h1>
+        <span class="h3">ID #:</span>
+        <input [disabled]="!editing" [(ngModel)]="product.id" type="text" class="form-control" aria-describedby="basic-addon1">
+        <br>
+        <span class="h3">Nombre:</span>
+        <input [disabled]="!editing" [(ngModel)]="product.name"  type="text" class="form-control"  aria-describedby="basic-addon1">
+        <br>
+        <span class="h3">Precio:</span>
+        <input [disabled]="!editing" [(ngModel)]="product.price" type="number" class="form-control"  aria-describedby="basic-addon1">
+        <br>
+        <span class="h3">Descripción:</span>
+        <input [disabled]="!editing" [(ngModel)]="product.description" type="text" class="form-control"  aria-describedby="basic-addon1">
+        <br>
+        <span  class="h3">Departamento:</span>
+        <select [(ngModel)]="product.department"  [disabled]="!editing" class="custom-select" >
+                <option selected disabled>Elegir grupo</option>
+                <option *ngFor="let department of departments" [value]="department">{{department}}</option> 
+        </select>
+        <br>
+        <br>
+        <button class=" btn btn-primary" (click)="updateProduct()" [disabled]="!editing" >Editar</button>
+        <button class=" btn btn-outline-danger ml-2" (click)="deleteProduct()">Eliminar</button>
+</div>

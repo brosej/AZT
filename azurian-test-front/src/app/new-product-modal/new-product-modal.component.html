@@ -1,0 +1,29 @@
+
+<div class="modal-header">
+    <h4 class="modal-title custom-modaltitle-display">Nuevo producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="productFormGroup">
+            <span class="pb-2">Nombre de producto:</span><br>
+            <input type="text" class="form-control" formControlName="name" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1"> 
+            <span class="pb-2">Precio</span><br>
+            <input type="number" class="form-control" formControlName="price" placeholder="Precio de producto"/><br>  
+            <span class="pb-2">Descripcion</span><br>
+            <input type="text" class="form-control" formControlName="description" placeholder="Descripcion de producto"/><br>
+            <span  class="pb-2">Departamento: (seleccione)</span>
+            <select class="custom-select" formControlName="department" >
+                <option *ngFor="let department of departments" [value]="department" >{{department}}</option>  
+            </select>
+    </form>
+
+
+  </div>
+  <div class="modal-footer">
+      <div class="row">
+          <button type="button" class="btn btn-secondary col mr-2" (click)="activeModal.close('Close click')">Cancelar</button>
+          <button type="button" class="btn btn-success col mr-2" (click)="addProduct(productFormGroup.value)" [disabled]="!productFormGroup.valid">Guardar</button>
+      </div>
+  </div>
