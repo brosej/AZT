@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "types" : ["node", "express"],
+        "lib": ["es2017"]
+    }
+ }
