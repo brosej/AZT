@@ -1,0 +1,10 @@
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Nintendo Switch', 270000, 'Game console', 'Videogames');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Xbox One', 320000, 'Game console', 'Videogames');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Playstation 4', 250000, 'Game console', 'Videogames');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Iphone X', 600000, 'Phone', 'Smartphones');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Huawei P20', 300000, 'Phone', 'Smartphones');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Apple earplugs', 350000, 'headphones', 'Smartphones');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('LG Smart TV', 130000, 'Smart TV', 'Electronics');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Sony Smart TV', 150000, 'Smart TV', 'Electronics');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Samsung Smart TV', 120000, 'Smart TV', 'Electronics');
+INSERT INTO azurian_products (name, price, description, department) VALUES ('Master-G Smart TV', 110000, 'Smart TV', 'Electronics');
