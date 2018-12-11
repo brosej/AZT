@@ -1,6 +1,6 @@
 AZT
 
-Una aplicacion web para manejar de inventarios, hecha en Angular 7 en el frontend, con algunas dependencias como Bootstrap 4, entre otras. 
+Una aplicacion web para manejar inventarios, hecha en Angular 7 en el frontend, con algunas dependencias como Bootstrap 4, entre otras. 
 El servidor hecho en NodeJS con express, utilizando typescript. La base de datos esta hecha en MySQL.
 
 ########################################################################################
