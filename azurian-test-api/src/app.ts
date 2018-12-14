@@ -3,6 +3,7 @@ import { getConnection } from './config/mysqlcon';
 import routes from './routes/index'
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors'
+
 const app = express();
 const urlencodedParser = bodyParser.urlencoded({ extended:false })
 const jsonParser = bodyParser.json();
